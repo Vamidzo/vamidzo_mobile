@@ -3,13 +3,13 @@ import 'package:vamidzo/modules/wrapper/app_wrapper.dart';
 import 'package:vamidzo/widgets/headers/screens_header.dart';
 import 'package:vamidzo/widgets/menus/screens_menu.dart';
 
-class VamidzoWalletMain extends StatelessWidget {
+class VamidzoProfileMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          CustomHeader(title: 'Portefeuille'),
+          CustomHeader(title: 'Paramètres'),
           Expanded(
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
