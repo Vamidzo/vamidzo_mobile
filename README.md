@@ -1,3 +1,3 @@
 # vamidzo
 
-Comotoraget e Covoiturage
+Comotoraget et Covoiturage
