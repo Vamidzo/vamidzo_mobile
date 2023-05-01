@@ -67,7 +67,7 @@ class VamidzoDashboard extends StatelessWidget {
           const SizedBox(height: 10),
           Expanded(
             child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
+              // physics: const BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -160,7 +160,7 @@ class VamidzoDashboard extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(right: 10, left: 10, bottom: 10),
                     child: Text(
-                      'Commencez ici',
+                      'Faites vos courses',
                       textAlign: TextAlign.start,
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
@@ -171,28 +171,70 @@ class VamidzoDashboard extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
-                          height: Get.height,
-                          width: Get.width / 3.5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.purple,
+                        Card(
+                          elevation: 2,
+                          child: Container(
+                            height: Get.height,
+                            width: Get.width / 3.5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/images/moto.svg',
+                                  semanticsLabel: 'notification',
+                                  width: 50,
+                                ),
+                                const SizedBox(height: 5),
+                                Text('Moto')
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          height: Get.height,
-                          width: Get.width / 3.5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green,
+                        Card(
+                          elevation: 2,
+                          child: Container(
+                            height: Get.height,
+                            width: Get.width / 3.5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/images/car.svg',
+                                  semanticsLabel: 'notification',
+                                  width: 50,
+                                ),
+                                const SizedBox(height: 5),
+                                Text('Voiture')
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          height: Get.height,
-                          width: Get.width / 3.5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.purple,
+                        Card(
+                          elevation: 2,
+                          child: Container(
+                            height: Get.height,
+                            width: Get.width / 3.5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/images/proximite.svg',
+                                  semanticsLabel: 'notification',
+                                  width: 50,
+                                ),
+                                const SizedBox(height: 5),
+                                Text('A proximité')
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -201,10 +243,23 @@ class VamidzoDashboard extends StatelessWidget {
                   const SizedBox(height: 10),
                   Container(
                     margin: EdgeInsets.only(right: 10, left: 10, bottom: 10),
-                    child: Text(
-                      'Mon activité',
-                      textAlign: TextAlign.start,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Mon activité',
+                          textAlign: TextAlign.start,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        Text(
+                          'Voir plus',
+                          textAlign: TextAlign.start,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(color: Theme.of(context).primaryColor),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -214,6 +269,7 @@ class VamidzoDashboard extends StatelessWidget {
                         ListView.separated(
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
                           separatorBuilder: (context, index) {
                             return Divider();
                           },
@@ -288,6 +344,83 @@ class VamidzoDashboard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 10),
+                  Container(
+                    margin: EdgeInsets.only(right: 10, left: 10, bottom: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Mon véhicule',
+                          textAlign: TextAlign.start,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        Text(
+                          'Consulter',
+                          textAlign: TextAlign.start,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(color: Theme.of(context).primaryColor),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          height: 60,
+                          width: 60,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Image.network(
+                              "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Haojue Dame',
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              '7456 BF',
+                            ),
+                          ],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(
+                            5,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            borderRadius: BorderRadius.circular(
+                              5,
+                            ),
+                          ),
+                          child: Row(
+                            children: const [
+                              Icon(
+                                Icons.edit_note_outlined,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                'Modifier',
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

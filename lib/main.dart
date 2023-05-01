@@ -10,6 +10,7 @@ import 'package:vamidzo/modules/wallet/wallet_main.dart';
 import 'package:vamidzo/modules/wrapper/app_wrapper.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   runApp(const VamidzoApp());
 }
 
@@ -20,7 +21,7 @@ class VamidzoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: lightTheme,
       darkTheme: darkTheme,
       navigatorKey: Get.key,
